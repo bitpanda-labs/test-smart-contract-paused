@@ -24,7 +24,6 @@ contract Paused {
         // * You can validate a condition using the `require(bool condition, string error_message);` function
 
         // ONLY UPDATE ABOVE THIS LINE
-        require(!paused, "The contract is paused");
         _;
     }
 
@@ -38,7 +37,6 @@ contract Paused {
         // Hints:
         // * The `paused` state variable controls if a contract is paused or not
         // * The `!` operator can be used to evaluate the invert of a boolean value: !true -> false, !false -> true
-        paused = !paused;
     }
 
     function updateState() external onlyWhenNotPaused {
